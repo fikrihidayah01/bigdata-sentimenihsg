@@ -6,6 +6,7 @@ Sastrawi
 nltk
 wordcloud
 scikit-learn
+scipy
 requests
 streamlit
 plotly
