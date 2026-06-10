@@ -460,9 +460,9 @@ with tab_lag:
                 return "background-color: #ffc7ce; color: #9c0006"
             return ""
 
-        styled = df_lag_combined.style.applymap(
-            color_r, subset=["r_lexicon", "r_indobert"]
-        ).format("{:.3f}", na_rep="-")
+        styled = df_lag_combined.style.format("{:.3f}", na_rep="-").apply(
+            lambda col: [color_r(v) for v in col], subset=["r_lexicon", "r_indobert"]
+        )
 
         st.dataframe(styled, use_container_width=True)
 
